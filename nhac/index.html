@@ -1,204 +1,152 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lời Bài Hát</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Love Theme</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: #ff69b4; /* Hot pink background color */
+            background-color: pink;
+            overflow: hidden;
             margin: 0;
             padding: 0;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #333;
-            overflow: hidden; /* Hide overflowing hearts */
-        }
-   
-        .lyrics {
-            margin-top: 1rem;
-            background: #ffffff00;
-            padding: 20px;
-            border-radius: 10px;
-     
-            height: 100px;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            position: relative;
-        }
-        .lyrics p {
-            color: black;
-            margin: 0;
-            font-size: 24px; /* Increase font size */
-            font-weight: bold; /* Make text bold */
-            transition: opacity 0.3s;
-            opacity: 0;
-            position: absolute;
-        }
-        .lyrics p.active {
-            opacity: 1;
-        }
-        .lyrics p.inactive span {
-            display: inline-block;
-            animation: scatter 2s forwards;
-        }
-        @keyframes scatter {
-            0% {
-                opacity: 1;
-                transform: translate(0, 0);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(0, -50px);
-            }
-        }
-        audio {
-            display: none; /* Hide the audio controls */
+            align-items: center;
+            font-family: Arial, sans-serif;
         }
         .heart {
             position: absolute;
-            font-size: 50px;
-            color: #ffb6c1; /* Light pink color */
-            animation: float 10s infinite; /* Slow down the animation */
+            color: #FF69B4; /* Love-themed pink color */
+            font-size: 4rem; /* Even larger size */
+            animation: float 10s infinite; /* Slower animation */
         }
         @keyframes float {
             0% {
-                transform: translateX(0);
+                transform: translate(0, 0) rotate(0deg);
                 opacity: 1;
             }
             100% {
-                transform: translateX(-100vw); /* Move from right to left */
+                transform: translate(calc(100vw * (Math.random() - 0.5)), calc(-100vh * Math.random())) rotate(360deg);
                 opacity: 0;
             }
+        }
+        .center-window {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #FF69B4;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease-in-out;
+            z-index: 1;
+            flex-direction: column; /* Ensure vertical alignment */
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .love-button {
+            background-color: #90EE90; /* Light green background */
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #FF69B4;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .love-button:hover {
+            background-color: #77DD77; /* Slightly darker green on hover */
+        }
+        .response-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .response-button {
+            background-color: #90EE90; /* Light green background */
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #FF69B4;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .response-button:hover {
+            background-color: #77DD77; /* Slightly darker green on hover */
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="/">Trang Chủ</a></li>
-                    <li><a href="/app">Ứng Dụng</a></li>
-                    <li><a href="/nhac">Nghe Nhạc</a></li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container" style="z-index: 999;">
-        <h1>Cứ thế mong chờ</h1>
-        <span>Tác giả: Nguyễn Đình Vũ</span>
-        <audio id="audio" controls>
-            <source src="/assets/1.mp3" type="audio/mpeg">
-            Trình duyệt của bạn không hỗ trợ thẻ âm thanh.
-        </audio>
-        
-        <script>
-            window.addEventListener('load', function() {
-                const audio = document.getElementById('audio');
-                // Tự động phát (kiểm tra tương thích trình duyệt)
-                audio.play().catch(error => {
-                    console.log('Không thể tự động phát:', error);
-                });
-            });
-        </script>
-        
-        <div class="lyrics" id="lyrics">
-            <p data-time="0">...</p>
-            <p data-time="5">Còn lại gì cho nhau sau bao nhiêu yêu thương em đánh rơi ?</p>
-            <p data-time="10">Chỉ còn lại nỗi đau, đêm về đêm anh luôn mong chờ em tới.</p>
-            <p data-time="14">Cứ thế mong chờ, đến những phút thẫn thờ, lạc mình trong bơ vơ đôi chân lang thang tìm lối thoát.
-            </p>
-            <p data-time="21">Cố thoát ra cảm giác giày vò từng cơn anh đang níu lấy,
-            </p>
-            <p data-time="25">biết trách ai , cứ giấu thật nhiều vì em vẫn còn đâu đây.
-            </p>
-            <p data-time="29">Hứa với nhau, thất hứa để rồi làm đau tim anh vỡ nát.</p>
-            <p data-time="32">Anh hy vọng… ! Anh chấp nhận…. ! Một tình yêu.</p>
-            <p data-time="34">Có không em niềm tin, anh thoát ra khỏi chính mình.</p>
-            <p data-time="38">Đã lâu anh lặng thinh, vì em mà anh câm nín.</p>
-            <p data-time="42">Nói ra cũng vậy thôi, anh biết anh mất em rồi !</p>
-            <p data-time="45">Tình đầu đã phai phôi</p>
-            <p data-time="48">Giải thoát cho nhau ngày mai, không giữ những gì sót lại.</p>
-            <p data-time="52">Đúng hay anh đã sai ? Chẳng qua là do cả hai.</p>
-            <p data-time="56">Phút chốc anh nhận ra, anh sẽ yêu thương lấy mình.
-            </p>
-            <p data-time="60">Để anh không hy sinh vô nghĩa vì ai kia..</p>
-            <p data-time="64">...</p>
-            <p data-time="119">Cố thoát ra cảm giác giày vò từng cơn anh đang níu lấy,</p>
-            <p data-time="124">biết trách ai , cứ giấu thật nhiều vì em vẫn còn đâu đây.
-            </p>
-            <p data-time="127">Hứa với nhau, thất hứa để rồi làm đau tim anh vỡ nát.</p>
-            <p data-time="131">Anh hy vọng… ! Anh chấp nhận…. ! Một tình yêu.</p>
-            <p data-time="134">Có không em niềm tin, anh thoát ra khỏi chính mình.</p>
-            <p data-time="137">Đã lâu anh lặng thinh, vì em mà anh câm nín.</p>
-            <p data-time="140">Nói ra cũng vậy thôi, anh biết anh mất em rồi !</p>
-            <p data-time="144">Tình đầu đã phai phôi</p>
-            <p data-time="147">Giải thoát cho nhau ngày mai, không giữ những gì sót lại.</p>
-            <p data-time="151">Đúng hay anh đã sai ? Chẳng qua là do cả hai.</p>
-            <p data-time="155">Phút chốc anh nhận ra, anh sẽ yêu thương lấy mình.
-            </p>
-            <p data-time="159">Để anh không hy sinh vô nghĩa vì ai kia..</p>
-            <p data-time="164">...</p>
+    <div class="center-window" id="center-window">
+        <img id="love-gif" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXkzejdsbW0ydWFjempoZWY5cjJxam8xYmg4MTR4cTV3amIzNGNuciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nFLW7PNGgN3lI68rdv/giphy.gif" alt="Love GIF" style="width: 150px; height: auto; margin-bottom: 10px;">
+        <div id="love-text">Nhân dịp này em có điều này muốn nói với chị :33</div>
+        <button class="love-button" onclick="changeContent()">Ừm, nói đi</button>
+        <div class="response-buttons" id="response-buttons" style="display: none;">
+            <button class="response-button" id="reject-button" onclick="handleResponse('Từ chối')">Từ chối</button>
+            <button class="response-button" id="accept-button" onclick="handleResponse('Đồng ý')">Đồng ý</button>
         </div>
     </div>
     <script>
-        const audio = document.getElementById('audio');
-        const lyrics = document.getElementById('lyrics');
-        const lines = lyrics.getElementsByTagName('p');
-
-        function wrapLetters(line) {
-            const text = line.textContent;
-            line.innerHTML = '';
-            for (let i = 0; i < text.length; i++) {
-                const span = document.createElement('span');
-                span.textContent = text[i];
-                line.appendChild(span);
-            }
-        }
-
-        for (let i = 0; i < lines.length; i++) {
-            wrapLetters(lines[i]);
-        }
-
-        audio.addEventListener('timeupdate', () => {
-            for (let i = 0; i < lines.length; i++) {
-                const currentTime = audio.currentTime;
-                const lineTime = parseFloat(lines[i].getAttribute('data-time'));
-
-                if (currentTime >= lineTime) {
-                    for (let j = 0; j < lines.length; j++) {
-                        lines[j].classList.remove('active');
-                        if (j < i) {
-                            lines[j].classList.add('inactive');
-                        }
-                    }
-                    lines[i].classList.add('active');
-                }
-            }
-        });
-
-        // Create hearts
         function createHeart() {
-            const heart = document.createElement('i');
-            heart.className = 'fas fa-heart heart';
-            heart.style.top = Math.random() * 100 + 'vh';
-            heart.style.right = 0; /* Start from the right side */
-            heart.style.animationDuration = Math.random() * 2 + 8 + 's'; /* Slow down the animation */
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh'; /* Appear from random positions */
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's'; /* Random duration between 5s and 10s */
+            heart.innerHTML = '<i class="fas fa-heart"></i>';
             document.body.appendChild(heart);
+
             setTimeout(() => {
                 heart.remove();
-            }, 10000); /* Adjust timeout to match animation duration */
+            }, 10000); /* Match the animation duration */
         }
 
-        setInterval(createHeart, 500); /* Adjust interval to create hearts less frequently */
+        function changeContent() {
+            document.getElementById('love-gif').src = 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY21xNnM2cmg4aDl3MDF3Mmx0dmw3Y2R6MzBsdTZ6OTNwN3dqNXJtNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif';
+            document.getElementById('love-text').innerText = 'Em yêu chị rất nhiều! Chị đồng ý làm ny em nhaa';
+            document.querySelector('.love-button').style.display = 'none';
+            document.getElementById('response-buttons').style.display = 'flex';
+        }
+
+        function handleResponse(response) {
+            if (response === 'Đồng ý') {
+                document.getElementById('love-gif').src = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjQzMjlzdWkxMmxpMDQwZHl4aHE2bTBsNHNqMTJ2OTB6MjltZTNsNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ndAvMC5LFPNMCzq7m/giphy.gif';
+                document.getElementById('love-text').innerText = 'Em biết ngay chị sẽ đồng ý mà!';
+                document.getElementById('response-buttons').style.display = 'none';
+            } else if (response === 'Từ chối') {
+                window.location.href = 'https://www.facebook.com/'; // Replace with your desired URL
+            }
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'log_response.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(`response=${response}`);
+        }
+
+        setInterval(createHeart, 150); /* Create hearts even more frequently */
     </script>
 </body>
 </html>

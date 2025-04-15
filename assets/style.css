@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  color: #333;
+  background-image: url('/assets/image/maxresdefault.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #c2185b;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: white;
+}
+
+.hero img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+.avt img:hover {
+  box-shadow: 0 0 25px 10px #e75480;
+}
+
+.avt {
+  box-shadow: 0 0 15px 5px #e75480;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin: 0.5rem 0;
+  color: #e75480;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: black;
+}
+
+.hero .spotify-now-playing {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .spotify-now-playing img {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+}
+
+.hero .spotify-now-playing .song-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero .spotify-now-playing .song-info .song-title {
+  font-size: 1.3rem;
+  color: #e75480;
+  text-decoration: none;
+}
+
+.hero .spotify-now-playing .song-info .song-title:hover {
+  text-decoration: none;
+}
+
+.hero .spotify-now-playing .song-info .song-artist {
+  font-size: 0.9rem;
+  color: black;
+  padding-left: 10px;
+}
+
+.hero .spotify-now-playing .music-bars {
+  display: flex;
+  margin-right: 10px;
+}
+
+.hero .spotify-now-playing .music-bars div {
+  width: 4px;
+  height: 10px;
+  margin: 0 1px;
+  border-radius: 2px;
+  background: black;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.hero .spotify-now-playing .music-bars div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hero .spotify-now-playing .music-bars div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+.socials {
+  margin-top: 1rem;
+}
+
+.socials a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #c2185b;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.socials a i {
+  margin-right: 0.5rem;
+}
+
+.socials a:hover,
+.socials a:active {
+  color: #e75480 !important;
+}
+
+.section {
+  padding: 0.5rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  color: #ad1457;
+  border-bottom: 2px solid #f48fb1;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.tags span {
+  display: inline-block;
+  background: #f8bbd0;
+  color: #880e4f;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+}
+
+img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

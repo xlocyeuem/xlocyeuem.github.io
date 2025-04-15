@@ -1,3 +1,5 @@
+/* Coder by xlocyeuem */
+
 body {
   margin: 0;
   font-family: 'Outfit', sans-serif;
@@ -19,7 +21,7 @@ body {
   padding: 4rem 2rem;
   color: white;
 }
-
+/* Coder by xlocyeuem */
 .hero img {
   border-radius: 50%;
   width: 150px;
@@ -46,7 +48,7 @@ body {
   margin: 0 auto;
   color: black;
 }
-
+/* Coder by xlocyeuem */
 .hero .spotify-now-playing {
   margin-top: 1rem;
   display: flex;
@@ -61,7 +63,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
+/* Coder by xlocyeuem */
 .hero .spotify-now-playing img {
   width: 70px;
   height: 70px;
@@ -88,7 +90,7 @@ body {
   color: black;
   padding-left: 10px;
 }
-
+/* Coder by xlocyeuem */
 .hero .spotify-now-playing .music-bars {
   display: flex;
   margin-right: 10px;
@@ -110,7 +112,7 @@ body {
 .hero .spotify-now-playing .music-bars div:nth-child(3) {
   animation-delay: 0.4s;
 }
-
+/* Coder by xlocyeuem */
 @keyframes bounce {
   0%, 100% {
     transform: scaleY(1);
@@ -143,7 +145,7 @@ body {
 .socials a:active {
   color: #e75480 !important;
 }
-
+/* Coder by xlocyeuem */
 .section {
   padding: 0.5rem;
   max-width: 900px;
@@ -172,3 +174,4 @@ img {
   -webkit-user-select: none;
   user-select: none;
 }
+/* Coder by xlocyeuem */

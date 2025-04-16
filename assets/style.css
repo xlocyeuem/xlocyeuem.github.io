@@ -26,6 +26,14 @@ body {
   border-radius: 50%;
   width: 150px;
 }
+.game-table-wrapper {
+  background-color: #fce4ec; 
+  border: 2px solid #f8bbd0; 
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
 .avt img:hover {
   box-shadow: 0 0 25px 10px #e75480;

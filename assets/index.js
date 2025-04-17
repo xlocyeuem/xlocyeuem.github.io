@@ -41,7 +41,11 @@ const spotifyTracks = [
     url: "https://open.spotify.com/track/41DlPJXKTCypXdf2eSqa03?si=822aef179218489f",
     artist: "Vũ., Hà Anh Tuấn",
     audio: "/assets/music/binhyen.mp3"
-
+  },
+  {
+    url: "https://open.spotify.com/track/0669gFIK8dYK9GGQ0K0QNF?si=2d14a8617fcd428d",
+    artist: "Dương Domic",
+    audio: "/assets/music/mkn.mp3"
   }
 ];
 

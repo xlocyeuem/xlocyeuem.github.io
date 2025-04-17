@@ -28,11 +28,6 @@ const spotifyTracks = [
     audio: "/assets/music/snk.mp3"
   },
   {
-    url: "https://open.spotify.com/episode/3RnSstA1LcmjtNnJ8Nvfqd?si=9693f1878b574b8a",
-    artist: "eriinq",
-    audio: "/assets/music/t06.mp3"
-  },
-  {
     url: "https://open.spotify.com/track/3ukrFH17Zl6iEZ2QJ1Zwiy?si=a737267e66ac41d6",
     artist: "RPT Orijinn,Ronboogz",
     audio: "/assets/music/dontcoi.mp3"

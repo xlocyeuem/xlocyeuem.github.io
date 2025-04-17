@@ -9,6 +9,17 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
+@media (max-width: 768px) {
+  .game-table-wrapper img {
+    width: 40px !important;
+    height: auto;
+  }
+
+  .game-table-wrapper td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
 
 .logo {
   font-size: 1.8rem;

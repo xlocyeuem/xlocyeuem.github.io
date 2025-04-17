@@ -9,7 +9,7 @@ const spotifyTracks = [
   },
   {
     url: "https://open.spotify.com/track/2fLnUa3pPr511oHESDJUlr?si=2157b44c229c4147",
-    artist: "LAVIAI",
+    artist: "Duc Minh,Lê Phú,Hoàng Anh",
     audio: "/assets/music/laviai.mp3"
   },
   {

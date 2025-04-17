@@ -33,12 +33,19 @@ body {
   padding: 1rem;
   margin-top: 1rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
-
+.game-table-wrapper table {
+  min-width: 600px;
+}
 .avt img:hover {
   box-shadow: 0 0 25px 10px #e75480;
 }
-
+td, th {
+  white-space: normal; 
+  word-break: break-word; 
+}
 .avt {
   box-shadow: 0 0 15px 5px #e75480;
   transition: box-shadow 0.3s ease-in-out;

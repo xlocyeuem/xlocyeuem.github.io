@@ -36,6 +36,12 @@ const spotifyTracks = [
     url: "https://open.spotify.com/track/12DNdwLD9oZOPADqM10oyE?si=d14f14c56a864505",
     artist: "Fishy, Trí Dũng",
     audio: "/assets/music/fgmn.mp3"
+  },
+  {
+    url: "https://open.spotify.com/track/41DlPJXKTCypXdf2eSqa03?si=822aef179218489f",
+    artist: "Vũ., Hà Anh Tuấn",
+    audio: "/assets/music/binhyen.mp3"
+
   }
 ];
 

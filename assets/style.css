@@ -28,14 +28,16 @@ body {
 }
 .typing-effect {
   font-family: monospace;
-  white-space: nowrap;
+  white-space: pre-wrap;
   overflow: hidden;
-  border-right: 10px solid #fff;
-  width: fit-content;
+  border-right: 2px solid #fff; 
   font-size: 18px;
   color: #fff;
   margin-top: 20px;
+  line-height: 1.5;
+  width: 100%; 
 }
+
 
 .gallery-item img {
   width: 100%;

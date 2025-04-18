@@ -5,7 +5,7 @@ console.log("https://xlocyeuem.github.io");
 const typingText = document.getElementById("typing-text");
 const sentences = [
   "Nguyện Hóa Boy Anime để được yêu em🐧",
-  "Nhận code theo yêu cầu",
+  "Nhận code theo yêu cầu.",
   "Coded by xlocyeuem — All rights reserved",
   "Spotify mood: chill, deep & đáng yêu ~ "
 ];

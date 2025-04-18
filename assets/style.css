@@ -30,7 +30,7 @@ body {
   font-family: monospace;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #fff;
+  border-right: 10px solid #fff;
   width: fit-content;
   font-size: 18px;
   color: #fff;

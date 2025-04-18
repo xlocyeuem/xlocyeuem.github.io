@@ -26,6 +26,43 @@ body {
   gap: 10px;
   margin-top: 1rem;
 }
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 100px; /* Kích thước avatar */
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+
+.circle {
+  position: absolute;
+  background-color: #ff99cc; /* Màu hồng */
+  border-radius: 50%;
+  width: 20px; /* Kích thước hình tròn */
+  height: 20px;
+  top: 10px; /* Vị trí dọc của hình tròn */
+  left: 10px; /* Vị trí ngang của hình tròn */
+}
+
+.small-circle {
+  top: 30px; /* Đặt nó ra xa một chút */
+  left: 70px; /* Đặt ở vị trí khác */
+  width: 15px;
+  height: 15px;
+}
+
+.third-circle {
+  top: 70px;
+  left: 40px;
+  width: 10px;
+  height: 10px;
+}
+
 .typing-effect {
   font-family: monospace;
   white-space: pre-wrap;

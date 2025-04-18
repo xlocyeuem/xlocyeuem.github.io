@@ -7,7 +7,7 @@ const sentences = [
   "Nguyện Hóa Boy Anime để được yêu em🐧",
   "Nhận code theo yêu cầu",
   "Coded by xlocyeuem — All rights reserved",
-  "Spotify mood: chill, deep & đáng yêu ~ 🎶"
+  "Spotify mood: chill, deep & đáng yêu ~ "
 ];
 
 let sentenceIndex = 0;

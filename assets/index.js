@@ -1,6 +1,48 @@
 console.log("Coded by xlocyeuem — All rights reserved");
 console.log("https://xlocyeuem.github.io");
 // coder by xlocyeuem
+
+const typingText = document.getElementById("typing-text");
+const sentences = [
+  "Chào mừng đến với trang web của anh yêu 🥰",
+  "Coded by xlocyeuem — All rights reserved",
+  "Spotify mood: chill, deep & đáng yêu ~ 🎶"
+];
+
+let sentenceIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let speed = 100;
+
+function typeEffect() {
+  const currentSentence = sentences[sentenceIndex];
+  typingText.textContent = currentSentence.substring(0, charIndex);
+
+  if (!isDeleting && charIndex < currentSentence.length) {
+    charIndex++;
+    speed = 100;
+  } else if (isDeleting && charIndex > 0) {
+    charIndex--;
+    speed = 50;
+  }
+
+  if (charIndex === currentSentence.length && !isDeleting) {
+    speed = 1000; 
+    isDeleting = true;
+  } else if (charIndex === 0 && isDeleting) {
+    isDeleting = false;
+    sentenceIndex = (sentenceIndex + 1) % sentences.length;
+    speed = 500;
+  }
+
+  setTimeout(typeEffect, speed);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  typeEffect();
+  AOS.init();
+});
+
 const spotifyTracks = [
   {
     url: "https://open.spotify.com/track/5kqIPrATaCc2LqxVWzQGbk",
@@ -49,7 +91,7 @@ const spotifyTracks = [
   }
 ];
 
-let audio; 
+let audio;
 
 async function loadSpotifyTrack(spotifyObj) {
   try {
@@ -85,7 +127,3 @@ window.onload = function () {
     }
   });
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-  AOS.init();
-});

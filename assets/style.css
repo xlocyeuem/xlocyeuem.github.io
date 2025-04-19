@@ -32,21 +32,28 @@ body {
 }
 
 .avatar {
-  width: 100px; /* Kích thước avatar */
+  width: 100px;
   height: 100px;
   border-radius: 50%;
   border: 2px solid #fff;
   object-fit: cover;
 }
+.avatar:hover {
+  animation: heartbeat 1s infinite;
+}
 
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
 .circle {
   position: absolute;
-  background-color: #ff99cc; /* Màu hồng */
+  background-color: #ff99cc; 
   border-radius: 50%;
-  width: 20px; /* Kích thước hình tròn */
+  width: 20px; 
   height: 20px;
-  top: 10px; /* Vị trí dọc của hình tròn */
-  left: 10px; /* Vị trí ngang của hình tròn */
+  top: 10px;
+  left: 10px;
 }
 
 .small-circle {

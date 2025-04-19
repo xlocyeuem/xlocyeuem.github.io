@@ -127,21 +127,26 @@
   </section>
   <section class="section" data-aos="fade-up" data-aos-delay="200">
     <h2>📸 Album Ảnh</h2>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="/assets/image/game1.png" alt="Game 1" />
-        <p class="caption">Game 1</p>
-      </div>
-      <div class="gallery-item">
-        <img src="/assets/image/game2.png" alt="Game 2" />
-        <p class="caption">Game 2</p>
-      </div>
-      <div class="gallery-item">
-        <img src="/assets/image/game3.png" alt="Game 3" />
-        <p class="caption">Game 3</p>
-      </div>
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="gallery-item active">
+                <img src="/assets/image/game1.png" alt="Game 1" />
+                <p class="caption">Game 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/image/game2.png" alt="Game 2" />
+                <p class="caption">Game 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/image/game3.png" alt="Game 3" />
+                <p class="caption">Game 3</p>
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
-  </section>
+</section>
+
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
     <img class="lightbox-content" id="lightbox-img">

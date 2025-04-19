@@ -39,8 +39,8 @@ window.addEventListener('touchstart', (e) => {
 
 window.addEventListener('touchend', (e) => {
   const endY = e.changedTouches[0].clientY;
-  if (startY - endY > 50) nextSlide();
-  else if (endY - startY > 50) prevSlide();
+  if (startY - endY > 50) nextSlide();  // Vuốt lên
+  else if (endY - startY > 50) prevSlide();  // Vuốt xuống
 });
 
 showSlide(current);

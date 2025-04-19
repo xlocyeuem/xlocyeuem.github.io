@@ -20,37 +20,61 @@ body {
     padding: 8px;
   }
 }
-/* Gallery container */
+/* Container của gallery */
+.gallery-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Giới hạn kích thước của album ảnh */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Định dạng cho các ảnh trong gallery */
 .gallery {
   display: flex;
-  overflow: hidden;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  transition: transform 0.5s ease-in-out;
 }
 
 .gallery-item {
   flex: 0 0 100%;
   text-align: center;
-  display: none; /* Hide all images initially */
-}
-
-.gallery-item.active {
-  display: block; /* Show the active image */
+  display: block;
+  box-sizing: border-box;
 }
 
 .gallery-item img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
-.caption {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  color: #e91e63;
+/* Nút điều khiển */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Khi hover vào ảnh */
+.gallery-item img:hover {
+  transform: scale(1.05);
 }
 
 /* Lightbox style (hidden initially) */
@@ -128,7 +152,27 @@ body {
   width: 100%; 
 }
 
+.slide {
+  display: none; /* Ẩn tất cả slide */
+}
 
+.slide.active {
+  display: block; /* Hiển thị slide hiện tại */
+}
+
+#carousel {
+  width: 100%;
+  height: 400px; /* Hoặc tùy chỉnh theo nhu cầu */
+  position: relative;
+  overflow: hidden; /* Ẩn phần ngoài carousel */
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 .gallery-item img {
   width: 100%;
   height: auto;

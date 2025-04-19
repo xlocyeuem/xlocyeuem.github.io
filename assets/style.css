@@ -20,12 +20,58 @@ body {
     padding: 8px;
   }
 }
+/* Gallery container */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px;
-  margin-top: 1rem;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
+
+.gallery-item {
+  flex: 0 0 100%;
+  text-align: center;
+  display: none; /* Hide all images initially */
+}
+
+.gallery-item.active {
+  display: block; /* Show the active image */
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #e91e63;
+}
+
+/* Lightbox style (hidden initially) */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
 .avatar-container {
   position: relative;
   display: inline-block;

@@ -1,6 +1,53 @@
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (i === index) slide.classList.add('active');
+  });
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+function prevSlide() {
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+}
+
+// Cuộn chuột
+let scrollTimeout;
+window.addEventListener('wheel', (e) => {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    if (e.deltaY > 0) {
+      nextSlide();
+    } else {
+      prevSlide();
+    }
+  }, 100);
+});
+
+// Vuốt trên điện thoại
+let startY = 0;
+window.addEventListener('touchstart', (e) => {
+  startY = e.touches[0].clientY;
+});
+
+window.addEventListener('touchend', (e) => {
+  const endY = e.changedTouches[0].clientY;
+  if (startY - endY > 50) nextSlide();
+  else if (endY - startY > 50) prevSlide();
+});
+
+showSlide(current);
+
+// Type Effect
 console.log("Coded by xlocyeuem — All rights reserved");
 console.log("https://xlocyeuem.github.io");
-// coder by xlocyeuem
 
 const typingText = document.getElementById("typing-text");
 const sentences = [
@@ -28,7 +75,7 @@ function typeEffect() {
   }
 
   if (charIndex === currentSentence.length && !isDeleting) {
-    speed = 1000; 
+    speed = 1000;
     isDeleting = true;
   } else if (charIndex === 0 && isDeleting) {
     isDeleting = false;
@@ -44,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   AOS.init();
 });
 
+// Spotify playlist
 const spotifyTracks = [
   {
     url: "https://open.spotify.com/track/5kqIPrATaCc2LqxVWzQGbk",
